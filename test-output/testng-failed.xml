@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="3" parallel="tests" name="Failed suite [Parallel Test Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="utilities.ExtentReportManager"/>
+  </listeners>
+  <test thread-count="3" parallel="tests" name="Test_firefox(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="testCases.LoginTest">
+        <methods>
+          <include name="loginFunctionalityTest" invocation-numbers="2"/>
+          <include name="setUp"/>
+          <include name="enterUTL"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- testCases.LoginTest -->
+    </classes>
+  </test> <!-- Test_firefox(failed) -->
+  <test thread-count="3" parallel="tests" name="Test_edge(failed)">
+    <parameter name="browser" value="edge"/>
+    <classes>
+      <class name="testCases.LoginTest">
+        <methods>
+          <include name="loginFunctionalityTest" invocation-numbers="2"/>
+          <include name="setUp"/>
+          <include name="enterUTL"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- testCases.LoginTest -->
+    </classes>
+  </test> <!-- Test_edge(failed) -->
+</suite> <!-- Failed suite [Parallel Test Suite] -->
